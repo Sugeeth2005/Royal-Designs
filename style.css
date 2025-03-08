@@ -1,0 +1,306 @@
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+#navbar {
+  background-color: #111111;
+  /* Black background color */
+  position: fixed;
+  /* Make it stick/fixed */
+  top: -50px;
+  /* Hide the navbar 50 px outside of the top view */
+  width: 100%;
+  /* Full width */
+  transition: top 0.3s;
+  /* Transition effect when sliding down (and up) */
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: rgb(255, 238, 0);
+  color: black;
+}
+
+.bg-colour {
+  background-color: #111111;
+}
+
+#services {
+  margin-top: 5%;
+  color: white;
+  margin-left: 30px;
+}
+
+#About {
+  margin-top: 2%;
+  animation-name: about;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes about {
+  0% {
+    color: rgb(255, 238, 0);
+  }
+
+  100% {
+    color: #017bf8;
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 238, 0);
+  border-radius: 10px;
+}
+
+.box {
+  width: 30px;
+  height: 30px;
+  background-color: #017bf8;
+  position: relative;
+  animation: myfirst 5s linear 2s infinite alternate;
+}
+
+@keyframes myfirst {
+  0% {
+    background-color: #017bf8;
+    left: 0px;
+    top: 0px;
+  }
+
+  100% {
+    background-color: #017bf8;
+    left: 98%;
+    top: 0px;
+  }
+
+}
+
+.box1 {
+  width: 30px;
+  height: 30px;
+  margin-left: 98%;
+  background-color: #f99700;
+  position: relative;
+  animation: box1 5s linear 2s infinite alternate;
+}
+
+@keyframes box1 {
+  0% {
+    background-color: #f99700;
+    left: 0px;
+  }
+
+  100% {
+    background-color: #f99700;
+    left: -98%;
+  }
+
+}
+
+.btn {
+  background-color: #017bf8;
+  font-style: bold;
+  animation-name: btn;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes btn {
+  0% {
+    background-color: #017bf8;
+  }
+
+  50% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: #f99700;
+  }
+}
+
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+.card {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.card:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+
+.card:hover:before,
+.card:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+.medis {
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+
+.medis:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+
+.medis:hover:before,
+.card:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+
+.medis::before {
+  content: "";
+  width: 86%;
+  height: 159%;
+  border-radius: 60px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -21%;
+  left: 6.9%;
+  animation: spin 2.5s linear infinite;
+  
+
+}
+
+.medis::after {
+  position: absolute;
+  content: "";
+  top: -14px;
+  left: -4px;
+  right: 0;
+  z-index: -1;
+  height: 190%;
+  width: 103%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 30));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+  border-radius: 60px;
+}
